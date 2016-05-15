@@ -4,7 +4,7 @@
 @import url('main_max600.css');
 @import url('main_max400.css');
 
-/*OBS IMPLEMENTERA CSS-RESET...*/
+/* TODO: IMPLEMENTERA CSS-RESET...*/
 body {
     padding: 0;
     margin: 10px;
@@ -16,7 +16,7 @@ body {
     max-width: 1024px;
 }
 
-nav, aside, footer, .content {
+nav, footer, .content {
     margin: 10px 0;
 }
 
@@ -29,13 +29,19 @@ nav, aside, footer, .content {
 }
 .main-content {
     padding: 20px;
+
+    /*overflow: hidden;*/
 }
+/*.center {
+    margin: 0 auto;
+}*/
 
 header.top {
     overflow: hidden;
 }
 
 footer {
+    clear: both;
     background-color: #dddddd;
     text-align: center;
 }
@@ -85,6 +91,10 @@ nav {
         line-height: 0;
         width: 90%;
         margin: 0 auto;
+
+
+        /* TODO Använd queries för att fixa höjden när skärmen blir mindre...*/
+        height: 40px;
     }
 
         nav ul:after {
@@ -115,3 +125,42 @@ nav {
             nav li a:active {
                 color: red;
             }
+
+
+/* Order */
+
+input[type="number"] {
+    width: 100px;
+}
+textarea {
+    width: 100%;
+}
+
+
+/* TODO: Sätt fixed width på båda, sen tar du bara bort asiden med queries under 940px...*/
+#order {
+    width: 55%;
+    float: left;
+}
+
+#ejSkickadeOrders {
+    width: 35%;
+    float: right;
+
+    background-color: #fff;
+}
+
+
+div.sendButton {
+    width: 200px;
+    background-color: #eee;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+
+    border: 2px solid #000000;
+
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 8px #a0a0a0;
+}
