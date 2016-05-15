@@ -1,0 +1,16 @@
+﻿<footer>
+    @{
+        switch ((Applibrary.Footer)PageData["footer"])
+        {
+            case Applibrary.Footer.Orders:
+                <p>Inga orders på enheten..</p>
+                break;  // Always break each case
+            case Applibrary.Footer.Synchronize:
+                <p>Senaste synkroniseringen : 2016-05-07 13:13</p>
+                break;
+            default:
+                <p>"Du köper vi levererar."</p>
+                break;
+        }
+    }
+</footer>

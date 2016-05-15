@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="sv-se">
+<head>
+    <meta charset="utf-8" />
+    <title>Skruv och bult - Om oss</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="~/scripts/main.js"></script>
+    <script src="~/scripts/rotate.js"></script>     
+</head>
+<body>  
+    @RenderPage("header.cshtml")
+    @RenderPage("menu.cshtml")
+    
+            <article>
+                <section>
+                    <header>
+                        <h2>Välkommen till Skruv och bult!</h2>
+                    </header>
+                    <p>
+                        Vår vision är att vara Sveriges ledande leverantör av produkter inom verktyg, skruv och bult.
+                        Alla som jobbar hos oss är passionerade hantverkare. Vi delar frikostigt med oss av vår kunskap och ger dig råd och tips om hur du kan få ut ännu mer av dina saker och verktyg.
+                    </p>
+                    <p>
+                        - Välkommen till vår värld!
+                        Hos oss kan ni köpa era verktyg och få det specialanpassat av våra verktygsmakare och mättekniker.
+                    </p>
+                    <div>
+                        <img height="100" width="100" id="logo"
+                             src="images/logo.svg"
+                             alt="Skruv och bult loggo"
+                             onclick="animateLoggo()" />
+                    </div>
+                </section>
+            </article>
+
+   @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.None })
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="sv-se">
+<head>
+    <meta charset="utf-8" />
+    <title>Order</title>
+    <link href="css/StyleSheet3DButton.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="~/scripts/main.js"></script>    
+    <script src="~/scripts/order.js"></script>
+</head>
+<body>
+    @RenderPage("header.cshtml")
+    @RenderPage("menu.cshtml")
+
+    <div>        
+            <article>
+                <header>
+                    <h3>Implementera formulär här..</h3>                    
+                </header>
+            </article>        
+    </div>
+
+        <aside>
+            <h3>Ej skickade orders</h3>
+            <ol>
+                <li>2016-05-08 11:14 Thomas Andersson</li>
+                <li>2016-05-08 14:32 Annika Hellström</li>
+                <li>2016-05-08 16:04 Erik Byström</li>
+            </ol>
+        </aside>
+    
+
+    @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.Orders })
+
+</body>
+</html>
