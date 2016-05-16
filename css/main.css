@@ -138,7 +138,7 @@ textarea {
 
 
 /* TODO: Sätt fixed width på båda, sen tar du bara bort asiden med queries under 940px...*/
-#order {
+#orderDiv {
     width: 55%;
     float: left;
 }

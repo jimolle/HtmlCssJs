@@ -16,12 +16,12 @@
     @RenderPage("header.cshtml")
     @RenderPage("menu.cshtml")
 
-    <div class="rounded-div main-content" id="order">        
+    <div class="rounded-div main-content" id="orderDiv">        
             <article>
                 <header>
                     <h3>Order</h3>                    
                 </header>
-                <form>
+                <form name="order" id="order" action="Order_post.cshtml" method="post">
                     <fieldset>
                         <legend>Persondata:</legend>
                         <label for="namn" id="namnLabel">Namn: </label><input name="namn" id="namn" type="text">
@@ -49,7 +49,7 @@
                         <textarea name="leveransAdress" id="leveransAdress" cols="40" rows="5"></textarea>
                     </fieldset>
 
-                    <div class="sendButton">Skicka order</div>
+                    <div class="sendButton" onclick="ConfirmOrder()">Skicka order</div>
 
                 </form>
             </article>        
@@ -60,7 +60,7 @@
             <ol>
                 <li>2016-05-08 11:14 Thomas Andersson</li>
                 <li>2016-05-08 14:32 Annika Hellström</li>
-                @*<li>2016-05-08 16:04 Erik Byström</li>*@
+                <li>2016-05-08 16:04 Erik Byström</li>
             </ol>
         </aside>
     
