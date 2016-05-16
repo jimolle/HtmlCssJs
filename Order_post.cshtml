@@ -1,10 +1,33 @@
 ﻿@using System.Diagnostics
+@using System.Web.Configuration
 @{
 
+    var date = DateTime.Now;
+    var firstName = Request.Form["namn"];
+    var lastName = Request.Form["efterNamn"];
+    var product = Request.Form["produkt"];
+    var amount = Request.Form["antal"];
+    var billingAddress = Request.Form["fakturaAdress"];
+    var shippingAddress = Request.Form["leveransAdress"];
 
-    var name = Request.Form["namn"];
 
-    Debug.WriteLine(name);
+    //var result = "YYYY - MM - DD hh: mm: ss Firstname Lastname.txt";
 
+    var path = WebConfigurationManager.AppSettings["orderPath"].ToString();
+
+    //var path = @"C:\temp\hemtenta\";
+    path += date.Year + "-" + date.Month.ToString("00") + "-" + date.Day.ToString("00") +
+        " " + date.Hour.ToString("00") + "" + date.Minute.ToString("00") + "" + date.Second.ToString("00");
+    path += " " + firstName + " " + lastName;
+    path += ".txt";
+
+    //var result2 = string.Format("{0} ")
+
+    using (var file = new System.IO.StreamWriter(path))
+    {
+        file.WriteLine(product + ":" + amount);
+    }
+
+    Response.RedirectPermanent("Order.cshtml");
 
 }
