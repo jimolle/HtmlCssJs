@@ -1,0 +1,33 @@
+﻿@using System.Web.Configuration
+
+@{
+    var date = Request.Form["date"];
+    var firstName = Request.Form["namn"];
+    var lastName = Request.Form["efterNamn"];
+    var product = Request.Form["produkt"];
+    var amount = Request.Form["antal"];
+    var billingAddress = Request.Form["fakturaAdress"];
+    var shippingAddress = Request.Form["leveransAdress"];
+
+
+
+    var path = WebConfigurationManager.AppSettings["orderPath"].ToString();
+
+    if (!Directory.Exists(path))
+    {
+        Directory.CreateDirectory(path);
+    }
+
+    path += date;
+    path += " " + firstName + " " + lastName;
+    path += ".txt";
+
+
+    using (var file = new System.IO.StreamWriter(path))
+    {
+        file.WriteLine(product + ":" + amount);
+    }
+
+    //Response.RedirectPermanent("Synchronize.cshtml");
+
+}

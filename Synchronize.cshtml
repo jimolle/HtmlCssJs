@@ -8,24 +8,25 @@
     <title>Synkronisera</title>
     <link rel="icon" href="favicon.ico?v=4">
     <link href="css/main.css" rel="stylesheet" />
-    <script src="~/scripts/main.js"></script> 
+    <script src="~/scripts/main.js"></script>
+    <script src="~/scripts/localStorage.js"></script>
     <link href="~/css/StyleSheet3DButton.css" rel="stylesheet" />
 </head>
 <body>
     @RenderPage("header.cshtml")
     @RenderPage("menu.cshtml")
-   
-            <h3>Ej skickade orders</h3>
-            <article>
-                <section>
-                    <ol>
-                        <li>2016-05-08 11:14 Thomas Andersson</li>
-                        <li>2016-05-08 14:32 Annika Hellström</li>
-                        <li>2016-05-08 16:04 Erik Byström</li>
-                    </ol>
-                </section>
-            </article>
-            <div>Synkronisera</div>
+
+    <h3>Ej skickade orders</h3>
+    <article class="rounded-div main-content">
+        <section>
+            <ol>
+                <li>2016-05-08 11:14 Thomas Andersson</li>
+                <li>2016-05-08 14:32 Annika Hellström</li>
+                <li>2016-05-08 16:04 Erik Byström</li>
+            </ol>
+        </section>
+    </article>
+    <div class="button3d" onclick="syncLocalData()">Synkronisera</div>
     @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.Synchronize })
 </body>
 </html>
