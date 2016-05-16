@@ -24,8 +24,14 @@
                 <form name="order" id="order" action="Order_post.cshtml" method="post">
                     <fieldset>
                         <legend>Persondata:</legend>
-                        <label for="namn" id="namnLabel">Namn: </label><input name="namn" id="namn" type="text">
-                        <label for="efternamn" id="efternamnLabel">Efternamn: </label><input name="efternamn" id="efternamn" type="text">
+
+                        <div class="formBorderBox">
+                            <label for="namn" id="namnLabel">Namn: </label><input name="namn" id="namn" type="text">
+                        </div>
+                        <div class="formBorderBox">
+                            <label for="efternamn" id="efternamnLabel">Efternamn: </label><input name="efternamn" id="efternamn" type="text">
+                        </div>
+                        
                     </fieldset>
                     <fieldset>
                         <legend>Order:</legend>
@@ -63,7 +69,8 @@
                 <li>2016-05-08 16:04 Erik Byström</li>
             </ol>
         </aside>
-    
+
+<br class="clearFix">
 
     @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.Orders })
 

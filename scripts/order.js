@@ -3,12 +3,13 @@
     if (confirm("Vill du skicka ordern?")) {
 
         if (navigator.onLine)
-            document.getElementById("order").submit();
+            storeLocal();
+            //document.getElementById("order").submit();
         else {
             storeLocal();
         }
     } else {
-        alert("nothing posted...");
+        alert("Nothing posted...");
     }
 
 }
@@ -16,14 +17,13 @@
 function storeLocal() {
 
     var currentdate = new Date();
-    var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                    + (currentdate.getMonth() + 1) + "/"
-                    + currentdate.getFullYear() + " @ "
-                    + currentdate.getHours() + ":"
-                    + currentdate.getMinutes() + ":"
-                    + currentdate.getSeconds();
+    var datetime = currentdate.getFullYear() + "-"
+        + dateModifier(currentdate.getMonth() + 1) + "-"
+        + dateModifier(currentdate.getDate()) + " "
+            + dateModifier(currentdate.getHours()) + ""
+                + dateModifier(currentdate.getMinutes()) + ""
+                        + dateModifier(currentdate.getSeconds());
 
-    var date = "null";
     var firstName = document.getElementById("namn").value;
     var lastName = document.getElementById("efternamn").value;
     var product = document.getElementById("produkt").value;
@@ -32,18 +32,25 @@ function storeLocal() {
     var shippingAddress = document.getElementById("leveransAdress").value;
 
 
+    var order = {};
+    order.datestring = datetime;
+    order.firstName = firstName;
+    order.lastName = lastName;
+    order.product = product;
+    order.amount = amount;
+    order.billingAddress = billingAddress;
+    order.shippingAddress = shippingAddress;
 
-    // TODO: create a order-object instead of person...
-    //var person = new Object();
-    var person = {};
-    person.name = name;
-    person.phone = phone;
 
-    //if user already has memories in local, get that array and push into it.
-    //else create a blank array and add the memory.
+    //if user already has orders in local, get that array and push into it.
+    //else create a blank array and add the order.
     orders = localStorage.getItem("orderEntries") ?
                   JSON.parse(localStorage.getItem("orderEntries")) :
                   [];
-    orders.push(person);
+    orders.push(order);
     localStorage.setItem("orderEntries", JSON.stringify(orders));
+}
+
+function dateModifier(n) {
+    return n > 9 ? "" + n : "0" + n;
 }

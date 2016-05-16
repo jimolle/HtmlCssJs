@@ -11,11 +11,19 @@
     var shippingAddress = Request.Form["leveransAdress"];
 
 
-    //var result = "YYYY - MM - DD hh: mm: ss Firstname Lastname.txt";
+    if (firstName == null || lastName == null || int.Parse(amount) <= 0)
+    {
+        Response.RedirectPermanent("Order.cshtml");
+    }
+
 
     var path = WebConfigurationManager.AppSettings["orderPath"].ToString();
 
-    //var path = @"C:\temp\hemtenta\";
+    if (!Directory.Exists(path))
+    {
+        Directory.CreateDirectory(path);
+    }
+
     path += date.Year + "-" + date.Month.ToString("00") + "-" + date.Day.ToString("00") +
         " " + date.Hour.ToString("00") + "" + date.Minute.ToString("00") + "" + date.Second.ToString("00");
     path += " " + firstName + " " + lastName;

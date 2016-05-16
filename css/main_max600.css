@@ -1,3 +1,40 @@
 ﻿@media screen and (max-width: 600px) {
   
+    /* nav */
+     nav ul {
+
+            width: 100%;
+
+
+
+            /* TODO Använd queries för att fixa höjden när skärmen blir mindre...*/
+            height: 40px;
+
+
+
+
+
+            text-align:center;
+            font-size: 0.875rem;
+        }
+
+            nav ul:after {
+                display: none;
+            }
+
+        nav li {
+            
+        }
+
+            nav li a {
+
+                padding: 12px 0px;
+
+
+
+                color: red;
+
+            }
+
+
 }
