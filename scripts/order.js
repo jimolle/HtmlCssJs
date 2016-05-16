@@ -2,13 +2,14 @@
 {
     if (confirm("Vill du skicka ordern?")) {
 
-        if (navigator.onLine)
+        if (navigator.onLine) {
+            //storeLocal();
+            document.getElementById("order").submit();
+            //alert("ok");
+        } else {
             storeLocal();
-            //document.getElementById("order").submit();
-        else {
-            storeLocal();
+            location.reload();
         }
-        location.reload();
     } else {
         alert("Nothing posted...");
     }

@@ -59,7 +59,6 @@ function postLocalData(order) {
 
     xhttp.open("POST", "Synchronize_post.cshtml", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //TODO
     xhttp.send(order);
 }
 
@@ -67,3 +66,5 @@ function postLocalData(order) {
 function dateModifier(n) {
     return n > 9 ? "" + n : "0" + n;
 }
+
+//TODO: Fetch local data

@@ -11,18 +11,14 @@
 
 
 
-    var path = WebConfigurationManager.AppSettings["orderPath"].ToString();
-
-    if (!Directory.Exists(path))
-    {
-        Directory.CreateDirectory(path);
-    }
+    var path = Helpers.GetOrdersPath();
 
     path += date;
     path += " " + firstName + " " + lastName;
     path += ".txt";
 
 
+    //TODO: HELPER
     using (var file = new System.IO.StreamWriter(path))
     {
         file.WriteLine(product + ":" + amount);
