@@ -10,7 +10,7 @@
             location.reload();
         }
     } else {
-        alert("Nothing posted...");
+        alert("Postningen avbröts...");
     }
 
 }

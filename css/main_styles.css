@@ -13,26 +13,29 @@ body {
 nav, footer, .content {
     margin: 10px 0;
 }
-
-
-.rounded-div {
-    border: 1px solid #979596;
-    padding: 5px;
-    -ms-border-radius: 20px;
-    border-radius: 20px;
-}
-
 .main-content {
     padding: 20px;
     /*overflow: hidden;*/
 }
+.centerImg {
+    display: block;
+    margin: 0 auto;
+}
+.underlined {
+    text-decoration: underline;
+}
+
+.rounded-div {
+    border: 1px solid #979596;
+    /*padding: 5px;*/
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+
 
 .clearFix {
     clear: both;
 }
-/*.center {
-    margin: 0 auto;
-}*/
 
 header.top {
     overflow: hidden;
@@ -72,6 +75,10 @@ header.top h2 {
 
 header.top h3 {
     font-size: 1rem;
+}
+
+h2, h3 {
+    text-align: center;
 }
 
 /* NAV */
@@ -172,4 +179,14 @@ textarea {
 footer ol {
     display: inline-block;
     text-align: left;
+}
+
+/* Advertise */
+.videoContainer {
+    max-width: 480px;
+    margin: 0 auto;
+}
+video {
+    width: 100% !important;
+    height: auto !important;
 }

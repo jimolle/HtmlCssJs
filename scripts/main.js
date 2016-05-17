@@ -4,10 +4,8 @@
         var networkIco = document.getElementById("networkicon");
 
         if (navigator.onLine) {
-            //alert("You are online!");
             networkIco.style.fill = "green";
         } else {
-            //alert("You are offline.");
             networkIco.style.fill = "red";
         }
     }
@@ -31,11 +29,3 @@
 
 
 };
-
-function formatDateForOutput(date) {
-
-    var part1 = date.substr(0, 13);
-    var part2 = date.substr(13,2);
-
-    return part1 + ":" + part2;
-}

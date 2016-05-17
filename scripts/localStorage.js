@@ -1,6 +1,5 @@
 ﻿function storeLocal() {
 
-
     var datetime = getFormattedDate();
 
     var firstName = document.getElementById("namn").value;
@@ -23,7 +22,7 @@
 
     //if user already has orders in local, get that array and push into it.
     //else create a blank array and add the order.
-    orders = localStorage.getItem("orderEntries") ?
+    var orders = localStorage.getItem("orderEntries") ?
                   JSON.parse(localStorage.getItem("orderEntries")) :
                   [];
     orders.push(order);
@@ -57,13 +56,6 @@ function postLocalData(order) {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(order);
 }
-
-
-function dateModifier(n) {
-    return n > 9 ? "" + n : "0" + n;
-}
-
-//TODO: Fetch local data
 
 function getLocalData() {
     var arr = JSON.parse(localStorage.getItem("orderEntries"));
@@ -118,4 +110,16 @@ function getFormattedDate(date) {
                         + dateModifier(currentdate.getSeconds());
 
     return datetime;
+}
+
+function dateModifier(n) {
+    return n > 9 ? "" + n : "0" + n;
+}
+
+function formatDateForOutput(date) {
+
+    var part1 = date.substr(0, 13);
+    var part2 = date.substr(13, 2);
+
+    return part1 + ":" + part2;
 }

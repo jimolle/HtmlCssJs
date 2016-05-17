@@ -16,7 +16,7 @@
     @RenderPage("header.cshtml")
     @RenderPage("menu.cshtml")
 
-    <h3>Ej skickade orders</h3>
+    <h2>Ej skickade orders</h2>
     <article class="rounded-div main-content">
         <section>
             <ol id="listOfUnsentOrders">
@@ -25,7 +25,6 @@
     </article>
     <div class="button3d" onclick="syncLocalData()">Synkronisera</div>
     @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.Synchronize })
-<script>
-</script>
+
 </body>
 </html>

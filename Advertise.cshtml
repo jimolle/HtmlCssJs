@@ -8,16 +8,38 @@
     <title>Reklam</title>
     <link rel="icon" href="favicon.ico?v=4">
     <link href="css/main.css" rel="stylesheet" />
-    <script src="~/scripts/main.js"></script>       
+    <script src="~/scripts/main.js"></script>
 </head>
 <body>
+
+
     @RenderPage("header.cshtml")
     @RenderPage("menu.cshtml")
-       
-        <h1>Reklam</h1>        
-            <p>Implementera videospelare här..</p>
+    <article>
+        <h2>Reklam</h2>
+        <section class="rounded-div main-content">
+            <div class="videoContainer">
+                <video poster="~/images/sthil.png" controls>
+                    <source src="~/video/sthil.mp4" type="video/mp4">
+                    Din webbläsare stödjer inte video, vänligen
+                    <a href="http://browsehappy.com" target="_blank">uppgradera</a>!
+                </video>
+            </div>
+        </section>
+        <section class="rounded-div main-content content">
+            <div class="videoContainer">
+                <video poster="~/images/dewalt.png" controls>
+                    <source src="~/video/dewalt.mp4" type="video/mp4">
+                    Din webbläsare stödjer inte video, vänligen
+                    <a href="http://browsehappy.com" target="_blank">uppgradera</a>!
+                </video>
+            </div>
+        </section>
+    </article>
 
-        @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.None })
+
+
+    @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.None })
 
 </body>
 </html>
