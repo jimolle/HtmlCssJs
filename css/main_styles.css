@@ -190,3 +190,36 @@ video {
     width: 100% !important;
     height: auto !important;
 }
+
+/* Products */
+.rounded-div-products {
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #979596;
+
+    width: 240px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+
+    margin: 5px 5px;
+    padding: 0 20px;
+
+    text-align: center;
+}
+
+.rounded-div-products img {
+    max-width: 230px;
+    max-height: 150px;
+
+    box-shadow: 5px 5px 10px #545454;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.rounded-div-products ul {
+    display: inline-block;
+    text-align: left;
+}

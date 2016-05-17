@@ -6,11 +6,8 @@
             width: 100%;
 
 
-
             /* TODO Använd queries för att fixa höjden när skärmen blir mindre...*/
             height: 40px;
-
-
 
 
 
@@ -23,18 +20,25 @@
             }
 
         nav li {
-            
         }
-
             nav li a {
-
                 padding: 12px 0px;
 
 
-
                 color: red;
-
             }
 
+    /* Products */
+    .rounded-div-products {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 0 5px;
+        margin: 5px 0;
+    }
+    
+    .rounded-div-products img {
+        max-width: 220px;
+    }
 
 }
