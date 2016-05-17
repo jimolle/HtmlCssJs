@@ -1,12 +1,7 @@
 ﻿function storeLocal() {
 
-    var currentdate = new Date();
-    var datetime = currentdate.getFullYear() + "-"
-        + dateModifier(currentdate.getMonth() + 1) + "-"
-        + dateModifier(currentdate.getDate()) + " "
-            + dateModifier(currentdate.getHours()) + ""
-                + dateModifier(currentdate.getMinutes()) + ""
-                        + dateModifier(currentdate.getSeconds());
+
+    var datetime = getFormattedDate();
 
     var firstName = document.getElementById("namn").value;
     var lastName = document.getElementById("efternamn").value;
@@ -51,6 +46,7 @@ function syncLocalData() {
 
     // SYNC COMPLETE
     localStorage.removeItem("orderEntries");
+    setLastSyncDate();
     location.reload();
 }
 
@@ -68,3 +64,58 @@ function dateModifier(n) {
 }
 
 //TODO: Fetch local data
+
+function getLocalData() {
+    var arr = JSON.parse(localStorage.getItem("orderEntries"));
+
+    if (arr == null) {
+        addToElement("Alla orders skickade.", "listOfUnsentOrders", "p");
+        return;
+    }
+
+    var output;
+
+    for (var i = 0; i < arr.length; i++) {
+        output = formatDateForOutput(arr[i].datestring) + " " + arr[i].firstName + " " + arr[i].lastName;
+        addToElement(output, "listOfUnsentOrders", "li");
+        //TODO appendChild med <li>output<li> #listOfUnsentOrders
+    }
+}
+
+function addToElement(output, listToAppend, element) {
+    var node = document.createElement(element);
+    var textnode = document.createTextNode(output);
+    node.appendChild(textnode);
+    document.getElementById(listToAppend).appendChild(node);
+}
+
+function setLastSyncDate() {
+    localStorage.setItem("lastSyncDate", getFormattedDate());
+}
+
+function getLastSyncDate() {
+    var output = localStorage.getItem("lastSyncDate");
+    //#lastSyncDate
+    document.getElementById("lastSyncDate").innerHTML = formatDateForOutput(output);
+}
+
+
+function getFormattedDate(date) {
+
+    var currentdate;
+
+    if (date == null) {
+        currentdate = new Date();
+    } else {
+        currentdate = date;
+    }
+
+    var datetime = currentdate.getFullYear() + "-"
+        + dateModifier(currentdate.getMonth() + 1) + "-"
+        + dateModifier(currentdate.getDate()) + " "
+            + dateModifier(currentdate.getHours()) + ""
+                + dateModifier(currentdate.getMinutes()) + ""
+                        + dateModifier(currentdate.getSeconds());
+
+    return datetime;
+}

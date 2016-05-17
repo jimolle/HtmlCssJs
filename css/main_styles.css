@@ -21,11 +21,12 @@ nav, footer, .content {
     -ms-border-radius: 20px;
     border-radius: 20px;
 }
+
 .main-content {
     padding: 20px;
-
     /*overflow: hidden;*/
 }
+
 .clearFix {
     clear: both;
 }
@@ -87,8 +88,6 @@ nav {
         line-height: 0;
         width: 80%;
         margin: 0 auto;
-
-
         /* TODO Använd queries för att fixa höjden när skärmen blir mindre...*/
         height: 40px;
     }
@@ -132,6 +131,7 @@ input[type="text"] {
 input[type="number"] {
     width: 100px;
 }
+
 textarea {
     width: 100%;
 }
@@ -151,7 +151,6 @@ textarea {
     box-sizing: border-box;
     width: 37%;
     float: right;
-
     background-color: #fff;
 }
 
@@ -162,10 +161,15 @@ textarea {
     margin: 20px auto;
     padding: 20px;
     text-align: center;
-
     border: 2px solid #000000;
-
     -ms-border-radius: 5px;
     border-radius: 5px;
     box-shadow: 0 8px #a0a0a0;
+}
+
+/* Footer */
+
+footer ol {
+    display: inline-block;
+    text-align: left;
 }

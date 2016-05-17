@@ -14,6 +14,11 @@
 
     onlineOrOffline();
 
+    if (document.getElementById("listOfUnsentOrders") != null)
+        getLocalData();
+    if (document.getElementById("lastSyncDate") != null)
+        getLastSyncDate();
+
     // använd modernizer istället!?
     if(window.addEventListener) {
         window.addEventListener("offline", onlineOrOffline);
@@ -23,4 +28,14 @@
         document.body.attachEvent("ononline", onlineOrOffline);
     }
 
+
+
 };
+
+function formatDateForOutput(date) {
+
+    var part1 = date.substr(0, 13);
+    var part2 = date.substr(13,2);
+
+    return part1 + ":" + part2;
+}

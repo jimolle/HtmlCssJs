@@ -3,9 +3,8 @@
     if (confirm("Vill du skicka ordern?")) {
 
         if (navigator.onLine) {
-            //storeLocal();
-            document.getElementById("order").submit();
-            //alert("ok");
+            storeLocal();
+            //document.getElementById("order").submit();
         } else {
             storeLocal();
             location.reload();

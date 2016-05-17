@@ -19,14 +19,13 @@
     <h3>Ej skickade orders</h3>
     <article class="rounded-div main-content">
         <section>
-            <ol>
-                <li>2016-05-08 11:14 Thomas Andersson</li>
-                <li>2016-05-08 14:32 Annika Hellström</li>
-                <li>2016-05-08 16:04 Erik Byström</li>
+            <ol id="listOfUnsentOrders">
             </ol>
         </section>
     </article>
     <div class="button3d" onclick="syncLocalData()">Synkronisera</div>
     @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.Synchronize })
+<script>
+</script>
 </body>
 </html>

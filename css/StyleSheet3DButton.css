@@ -5,7 +5,7 @@
 
 .push_button_disabled
 {
-	
+    cursor: not-allowed;
 }
 
 .push_button:active
