@@ -8,9 +8,9 @@
     <title>Synkronisera</title>
     <link rel="icon" href="favicon.ico?v=4">
     <link href="css/main.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet3DButton.css" rel="stylesheet" />
     <script src="~/scripts/main.js"></script>
     <script src="~/scripts/localStorage.js"></script>
-    <link href="~/css/StyleSheet3DButton.css" rel="stylesheet" />
 </head>
 <body>
     @RenderPage("header.cshtml")
@@ -23,8 +23,11 @@
             </ol>
         </section>
     </article>
-    <div class="button3d" onclick="syncLocalData()">Synkronisera</div>
+    <div id="push_button_sync" class="push_button" onclick="syncLocalData()">Synkronisera</div>
     @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.Synchronize })
 
+<script>
+
+</script>
 </body>
 </html>

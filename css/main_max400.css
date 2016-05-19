@@ -1,9 +1,14 @@
-﻿   @media screen and (max-width: 400px) {
+﻿@media screen and (max-width: 400px) {
 
+    .hideUnder400px {
+        display: none;
+    }
+    #menu {
+        background-color: #f0f0f0;
+        border: none;
+    }
 
-       /* NAV */
-
-
+    /* NAV */
     nav ul {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -17,15 +22,28 @@
     }
 
         nav li a {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 80%;
+
             color: #252525;
+            background-color: #aec2c1;
             text-align: center;
             padding: 12px 6px;
+            margin-bottom: 2px;
             text-decoration: none;
+
+            border: 1px solid black;
+            /*padding: 5px;*/
+            -ms-border-radius: 10px;
+            border-radius: 10px;
+
         }
 
-            nav li a:hover {
-                color: #4f4f4f;
-                text-decoration: underline;
+    nav li a:hover {
+                background-color: #c2c2c2;
+        text-decoration: none;
             }
 
             nav li a:active {
@@ -34,7 +52,7 @@
 
 
     /* button3d */
-    div.button3d {
+    .push_button, .push_button_disabled {
         width: 150px;
     }
 
@@ -44,7 +62,4 @@
     input[type="text"] {
         display: block;
     }
-
-
- }
-    
+}

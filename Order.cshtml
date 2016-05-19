@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="sv-se">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Order</title>
     <link rel="icon" href="favicon.ico?v=4">
     <link href="css/StyleSheet3DButton.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet"/>
-    <script src="~/scripts/main.js"></script>    
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="~/scripts/main.js"></script>
     <script src="~/scripts/order.js"></script>
     <script src="~/scripts/localStorage.js"></script>
 </head>
@@ -17,25 +17,26 @@
     @RenderPage("header.cshtml")
     @RenderPage("menu.cshtml")
 
-    <div class="rounded-div main-content" id="orderDiv">        
-            <article>
-                <header>
-                    <h3>Order</h3>                    
-                </header>
-                <form name="order" id="order" action="Order_post.cshtml" method="post">
-                    <fieldset>
-                        <legend>Persondata:</legend>
+    <div class="rounded-div main-content" id="orderDiv">
+        <article>
+            <header>
+                <h3>Order</h3>
+            </header>
+            <form name="order" id="order" action="Order_post.cshtml" method="post">
+                <fieldset>
+                    <legend>Persondata:</legend>
 
-                        <div class="formBorderBox">
-                            <label for="namn" id="namnLabel">Namn: </label><input name="namn" id="namn" type="text">
-                        </div>
-                        <div class="formBorderBox">
-                            <label for="efternamn" id="efternamnLabel">Efternamn: </label><input name="efternamn" id="efternamn" type="text">
-                        </div>
-                        
-                    </fieldset>
-                    <fieldset>
-                        <legend>Order:</legend>
+                    <div class="formBorderBox">
+                        <label for="namn" id="namnLabel">Namn: </label><input name="namn" id="namn" type="text">
+                    </div>
+                    <div class="formBorderBox">
+                        <label for="efternamn" id="efternamnLabel">Efternamn: </label><input name="efternamn" id="efternamn" type="text">
+                    </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Order:</legend>
+                    <div class="formBorderBox">
                         <label for="produkt" id="produktLabel">Produkt: </label>
                         <select name="produkt" id="produkt">
                             <option value="Polygrip Cobra">Polygrip Cobra</option>
@@ -44,31 +45,34 @@
                             <option value="Allroundgas">Allroundgas</option>
                             <option value="Dragblock">Dragblock</option>
                             <option value="Räfsa">Räfsa</option>
-                        </select> 
-                        Antal: <input name="antal" id="antal" type="number" min="1" value="1">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Faktura adress:</legend>
-                        <textarea name="fakturaAdress" id="fakturaAdress" cols="40" rows="5"></textarea>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Leverans adress:</legend>
-                        <textarea name="leveransAdress" id="leveransAdress" cols="40" rows="5"></textarea>
-                    </fieldset>
+                        </select>
+                    </div>
+                    <div class="formBorderBox">
+                        <label for="antal">Antal: </label>
+                        <input name="antal" id="antal" type="number" min="1" value="1">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Faktura adress:</legend>
+                    <textarea name="fakturaAdress" id="fakturaAdress" cols="40" rows="5"></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Leverans adress:</legend>
+                    <textarea name="leveransAdress" id="leveransAdress" cols="40" rows="5"></textarea>
+                </fieldset>
 
-                    <div class="button3d" onclick="ConfirmOrder()">Skicka order</div>
+                <div class="push_button" onclick="ConfirmOrder()">Skicka order</div>
 
-                </form>
-            </article>        
+            </form>
+        </article>
     </div>
 
-        <aside id="ejSkickadeOrders" class="rounded-div main-content">
-            <h3>Ej skickade orders</h3>
-            <ol id="listOfUnsentOrders">
-            </ol>
-        </aside>
+    <aside id="ejSkickadeOrders" class="rounded-div main-content">
+        <h3>Ej skickade orders</h3>
+        <ol id="listOfUnsentOrders"></ol>
+    </aside>
 
-<br class="clearFix">
+    <br class="clearFix">
 
     @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.Orders })
 

@@ -1,14 +1,15 @@
 ﻿window.onload = function () {
 
-    if (Modernizr.localstorage) {
-        alert("LocalStorage stödjs av din webbläsare!");
-        // run localStorage code here...
-    }
-    else {
-        // no native support for local storage
-        alert("Din webbläsare saknar stöd för localstorage!");
-        // TODO: Fallbacks osv osv, kör fler Modernizr också.
-    }
+    // TODO elsen exkluderar resten av koden!? WTF.
+    //if (Modernizr.localstorage) {
+    //    alert("LocalStorage stödjs av din webbläsare!");
+    //    // run localStorage code here...
+    //}
+    //else {
+    //    // no native support for local storage
+    //    alert("Din webbläsare saknar stöd för localstorage!");
+    //    // TODO: Fallbacks osv osv, kör fler Modernizr också.
+    //}
 
 
     function onlineOrOffline() {
@@ -23,14 +24,18 @@
 
     onlineOrOffline();
 
+    //TODO: OBS, detta känns som ett riktigt ruttet sätt att göra det på,
+    // då sökning i domen är SEG med vanilla js...
     if (document.getElementById("listOfUnsentOrders") != null)
         getLocalData();
     if (document.getElementById("lastSyncDate") != null)
         getLastSyncDate();
+    if (document.getElementById("push_button_sync") != null) 
+        checkIfPushButtonShouldBeHidden();
 
-    // använd modernizer istället!?
+    // TODO: Inkludera modernizr.js på alla sidor...
     if (Modernizr.eventlistener) {
-        alert("YES");
+        //alert("YES");
         window.addEventListener("offline", onlineOrOffline);
         window.addEventListener("online", onlineOrOffline);
     } else {

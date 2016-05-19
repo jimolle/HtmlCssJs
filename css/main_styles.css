@@ -24,6 +24,9 @@ nav, footer, .content {
 .underlined {
     text-decoration: underline;
 }
+.hidden {
+    display: none;
+}
 
 .rounded-div {
     border: 1px solid #979596;
@@ -56,6 +59,7 @@ footer {
     /*width: 49.5%;*/
     float: right;
     text-align: center;
+    padding: 5px;
 }
 
 header.top h1,
@@ -66,15 +70,15 @@ header.top h3 {
 
 header.top h1 {
     line-height: 0.8;
+    font-size: 1.6rem;
 }
 
 header.top h2 {
-    font-size: 1.25rem;
-    text-decoration: underline;
+    font-size: 1rem;
 }
 
 header.top h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 h2, h3 {
@@ -136,7 +140,7 @@ input[type="text"] {
 }
 
 input[type="number"] {
-    width: 100px;
+    width: 60px;
 }
 
 textarea {
@@ -159,19 +163,6 @@ textarea {
     width: 37%;
     float: right;
     background-color: #fff;
-}
-
-
-.button3d {
-    width: 200px;
-    background-color: #eee;
-    margin: 20px auto;
-    padding: 20px;
-    text-align: center;
-    border: 2px solid #000000;
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-    box-shadow: 0 8px #a0a0a0;
 }
 
 /* Footer */

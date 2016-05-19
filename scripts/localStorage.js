@@ -30,6 +30,10 @@
 }
 
 function syncLocalData() {
+    var pushButton = document.getElementById("push_button_sync");
+    pushButton.className = "push_button push_button_disabled";
+    pushButton.setAttribute("onclick", "");
+
     var arr = JSON.parse(localStorage.getItem("orderEntries"));
 
     if (arr == null)
@@ -62,7 +66,7 @@ function getLocalData() {
 
     if (arr == null) {
         addToElement("Alla orders skickade.", "listOfUnsentOrders", "p");
-        return;
+        return -1;
     }
 
     var output;
@@ -122,4 +126,11 @@ function formatDateForOutput(date) {
     var part2 = date.substr(13, 2);
 
     return part1 + ":" + part2;
+}
+
+function checkIfPushButtonShouldBeHidden() {
+    if (localStorage.getItem("orderEntries") == null) {
+        var pushButton = document.getElementById("push_button_sync");
+        pushButton.className = "hidden";
+    }
 }
