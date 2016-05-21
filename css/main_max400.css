@@ -59,7 +59,12 @@
 
 
     /* order*/
-    input[type="text"] {
+    .formBorderBox {
         display: block;
+        width: 100%;
+    }
+    input[type="text"], input[type="number"], select {
+        background-color: red;
+        width: 100%;
     }
 }

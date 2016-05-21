@@ -17,62 +17,7 @@
     @RenderPage("header.cshtml")
     @RenderPage("menu.cshtml")
 
-    <div class="rounded-div main-content" id="orderDiv">
-        <article>
-            <header>
-                <h3>Order</h3>
-            </header>
-            <form name="order" id="order" action="Order_post.cshtml" method="post">
-                <fieldset>
-                    <legend>Persondata:</legend>
-
-                    <div class="formBorderBox">
-                        <label for="namn" id="namnLabel">Namn: </label><input name="namn" id="namn" type="text">
-                    </div>
-                    <div class="formBorderBox">
-                        <label for="efternamn" id="efternamnLabel">Efternamn: </label><input name="efternamn" id="efternamn" type="text">
-                    </div>
-
-                </fieldset>
-                <fieldset>
-                    <legend>Order:</legend>
-                    <div class="formBorderBox">
-                        <label for="produkt" id="produktLabel">Produkt: </label>
-                        <select name="produkt" id="produkt">
-                            <option value="Polygrip Cobra">Polygrip Cobra</option>
-                            <option value="Vattenpass pocket">Vattenpass pocket</option>
-                            <option value="Skruvdragare">Skruvdragare</option>
-                            <option value="Allroundgas">Allroundgas</option>
-                            <option value="Dragblock">Dragblock</option>
-                            <option value="Rafsa">Rafsa</option>
-                        </select>
-                    </div>
-                    <div class="formBorderBox">
-                        <label for="antal">Antal: </label>
-                        <input name="antal" id="antal" type="number" min="1" value="1">
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Faktura adress:</legend>
-                    <textarea name="fakturaAdress" id="fakturaAdress" cols="40" rows="5"></textarea>
-                </fieldset>
-                <fieldset>
-                    <legend>Leverans adress:</legend>
-                    <textarea name="leveransAdress" id="leveransAdress" cols="40" rows="5"></textarea>
-                </fieldset>
-
-                <div class="push_button" onclick="ConfirmOrder()">Skicka order</div>
-
-            </form>
-        </article>
-    </div>
-
-    <aside id="ejSkickadeOrders" class="rounded-div main-content">
-        <h3>Ej skickade orders</h3>
-        <ol id="listOfUnsentOrders"></ol>
-    </aside>
-
-    <br class="clearFix">
+    @RenderPage("Order_markup.cshtml")
 
     @RenderPage("footer.cshtml", new { footer = Applibrary.Footer.Orders })
 
