@@ -33,10 +33,22 @@ public class Helpers
     {
         //var test = "2016-05-17 092728 test Test";
 
-        var part1 = filePath.Substring(0, 13);
-        var part2 = filePath.Substring(15);
+        if (filePath == "  ")
+            return "";
+        try
+        {
+            var part1 = filePath.Substring(0, 13);
+            var part2 = filePath.Substring(15);
 
-        return part1 + ":" + part2;
+            return part1 + ":" + part2;
+        }
+        catch (Exception e)
+        {
+            //Should log
+            Debug.WriteLine("Error: " + e.Message);
+        }
+
+        return "Korrupt orderfil";
     }
 
     public static string GetOrdersPath()
@@ -49,5 +61,18 @@ public class Helpers
         }
 
         return path;
+    }
+
+    public static void WriteToOrderFile(string path, string product, string amount, string billingAddress, string shippingAddress)
+    {
+        using (var file = new System.IO.StreamWriter(path))
+        {
+            file.WriteLine(product + ": " + amount + " st");
+            file.WriteLine();
+            file.WriteLine("Fakturaadress:");
+            file.WriteLine(billingAddress);
+            file.WriteLine("Leveransadress:");
+            file.WriteLine(shippingAddress);
+        }
     }
 }

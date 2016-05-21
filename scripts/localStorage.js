@@ -128,8 +128,9 @@ function formatDateForOutput(date) {
     return part1 + ":" + part2;
 }
 
+// Hide sync button if no orders to sync OR if offline...
 function checkIfPushButtonShouldBeHidden() {
-    if (localStorage.getItem("orderEntries") == null) {
+    if (localStorage.getItem("orderEntries") == null || !navigator.onLine) {
         var pushButton = document.getElementById("push_button_sync");
         pushButton.className = "hidden";
     }

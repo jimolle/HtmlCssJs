@@ -18,11 +18,8 @@
     path += ".txt";
 
 
-    //TODO: HELPER
-    using (var file = new System.IO.StreamWriter(path))
-    {
-        file.WriteLine(product + ":" + amount);
-    }
+    Helpers.WriteToOrderFile(path, product, amount, billingAddress, shippingAddress);
+
 
     //Response.RedirectPermanent("Synchronize.cshtml");
 

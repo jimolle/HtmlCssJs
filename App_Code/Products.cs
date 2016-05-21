@@ -16,7 +16,7 @@ namespace Applibrary
                 new Product() {Name="Skruvdragare"},
                 new Product() {Name="Allroundgas"},
                 new Product() {Name="Dragblock"},
-                new Product() {Name="Räfsa"}
+                new Product() {Name="Rafsa"}
             };
 
             return tempList;

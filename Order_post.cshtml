@@ -27,11 +27,8 @@
         date.Hour.ToString("00"), date.Minute.ToString("00"), date.Second.ToString("00"), firstName, lastName);
 
 
-    //TODO: HELPER
-    using (var file = new System.IO.StreamWriter(path))
-    {
-        file.WriteLine(product + ":" + amount);
-    }
+    Helpers.WriteToOrderFile(path, product, amount, billingAddress, shippingAddress);
+
 
     Response.RedirectPermanent("Order.cshtml");
 
