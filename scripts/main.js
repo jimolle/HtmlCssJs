@@ -14,11 +14,16 @@
 
     function onlineOrOffline() {
         var networkIco = document.getElementById("networkicon");
+        var footer = document.getElementById("footer");
 
         if (navigator.onLine) {
             networkIco.style.fill = "green";
         } else {
             networkIco.style.fill = "red";
+
+            //TODO: detta är nog inge bra lösning
+            footer.innerHTML = "<p>Du arbetar offline.</p>";
+
         }
     }
 

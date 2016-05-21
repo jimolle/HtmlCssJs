@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2016-05-21 v8
+# 2016-05-21 v14
 
 # Explicitly cached entries
 About.cshtml
@@ -7,8 +7,8 @@ Advertise.cshtml
 favicon.ico
 header.cshtml
 menu.cshtml
-Order.cshtml
-#Products.cshtml
+#Order.cshtml
+Products.cshtml
 Synchronize.cshtml
 
 css/main.css
@@ -42,5 +42,8 @@ video/sthil.mp4
 NETWORK:
 *
 
+
+# NU FUNKAR SKITEN.
+# TODO gör samma sak med Products.cshtml
 FALLBACK:
-footer.cshtml	footerOffline.cshtml
+Order.cshtml Order_offline.cshtml

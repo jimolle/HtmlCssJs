@@ -2,10 +2,8 @@
 @using System.Security.Cryptography.X509Certificates
 @using System.Web.Configuration
 @using Applibrary;
-<footer class="rounded-div">
-
+<footer id="footer" class="rounded-div">
     @{
-
         switch ((Applibrary.Footer)PageData["footer"])
         {
             case Applibrary.Footer.Orders:
@@ -36,5 +34,6 @@
                 <p>"Du köper vi levererar."</p>
                 break;
         }
+        // TODO: Får helt enkelt göra två olika filer, Products_
     }
 </footer>
