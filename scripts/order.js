@@ -4,6 +4,7 @@
 
         if (navigator.onLine) {
             storeLocal();
+            // TODO: ändra för produktion
             //document.getElementById("order").submit();
         } else {
             storeLocal();

@@ -6,8 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 
-// TODO ev. lägga till namespace om jag orkar...
-
 /// <summary>
 /// Global helpers for OrderApp.
 /// </summary>
@@ -33,8 +31,6 @@ public class Helpers
     {
         //var test = "2016-05-17 092728 test Test";
 
-        if (filePath == "  ")
-            return "";
         try
         {
             var part1 = filePath.Substring(0, 13);
@@ -71,6 +67,7 @@ public class Helpers
             file.WriteLine();
             file.WriteLine("Fakturaadress:");
             file.WriteLine(billingAddress);
+            file.WriteLine();
             file.WriteLine("Leveransadress:");
             file.WriteLine(shippingAddress);
         }

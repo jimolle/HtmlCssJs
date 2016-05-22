@@ -1,4 +1,5 @@
-﻿var logo, newDeg = 0, rotateYInterval;
+﻿//TODO: här var det lite globala variablar...
+var logo, newDeg = 0, rotateYInterval;
 
 function animateLoggo()
 {

@@ -9,7 +9,9 @@
     var billingAddress = Request.Form["fakturaAdress"];
     var shippingAddress = Request.Form["leveransAdress"];
 
-
+    // Ersätter alla \n med \r\n i billingAddress & shippingAddress!
+    billingAddress = billingAddress.Replace("\n", "\r\n");
+    shippingAddress = shippingAddress.Replace("\n", "\r\n");
 
     var path = Helpers.GetOrdersPath();
 

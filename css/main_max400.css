@@ -3,19 +3,39 @@
     .hideUnder400px {
         display: none;
     }
+
+    header.h1 {
+        text-align: center;
+    }
+
+    .header-right {
+        display: block;
+        width: 100%;
+    }
+
+    .header-left {
+        clear: both;
+    }
+
+
+    /* NAV */
     #menu {
         background-color: #f0f0f0;
         border: none;
     }
 
-    /* NAV */
     nav ul {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         width: 100%;
         height: 100%;
+        text-align: center;
     }
+
+        nav ul:after {
+            display: none;
+        }
 
     nav li {
         display: block;
@@ -26,45 +46,34 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
             width: 80%;
-
             color: #252525;
             background-color: #aec2c1;
             text-align: center;
             padding: 12px 6px;
             margin-bottom: 2px;
             text-decoration: none;
-
             border: 1px solid black;
-            /*padding: 5px;*/
             -ms-border-radius: 10px;
             border-radius: 10px;
-
         }
 
-    nav li a:hover {
+            nav li a:hover {
                 background-color: #c2c2c2;
-        text-decoration: none;
+                text-decoration: none;
             }
-
-            nav li a:active {
-                color: red;
-            }
-
 
     /* button3d */
     .push_button, .push_button_disabled {
         width: 150px;
     }
 
-
-
     /* order*/
     .formBorderBox {
         display: block;
         width: 100%;
     }
+
     input[type="text"], input[type="number"], select {
-        background-color: red;
         width: 100%;
     }
 }

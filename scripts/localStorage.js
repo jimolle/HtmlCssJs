@@ -74,7 +74,6 @@ function getLocalData() {
     for (var i = 0; i < arr.length; i++) {
         output = formatDateForOutput(arr[i].datestring) + " " + arr[i].firstName + " " + arr[i].lastName;
         addToElement(output, "listOfUnsentOrders", "li");
-        //TODO appendChild med <li>output<li> #listOfUnsentOrders
     }
 }
 
@@ -90,9 +89,12 @@ function setLastSyncDate() {
 }
 
 function getLastSyncDate() {
-    var output = localStorage.getItem("lastSyncDate");
     //#lastSyncDate
-    document.getElementById("lastSyncDate").innerHTML = formatDateForOutput(output);
+    var output = localStorage.getItem("lastSyncDate");
+    if (output == null)
+        return;
+    var lastDate = document.getElementById("lastSyncDate");
+    lastDate.innerHTML = formatDateForOutput(output);
 }
 
 
@@ -122,15 +124,21 @@ function dateModifier(n) {
 
 function formatDateForOutput(date) {
 
-    var part1 = date.substr(0, 13);
-    var part2 = date.substr(13, 2);
+    try {
+        var part1 = date.substr(0, 13);
+        var part2 = date.substr(13, 2);
 
-    return part1 + ":" + part2;
+        return part1 + ":" + part2;
+        
+    } catch (e) {
+        
+    }
 }
 
-// Hide sync button if no orders to sync OR if offline...
+// Hide sync button if appcache not supported OR no orders to sync OR if offline...
 function checkIfPushButtonShouldBeHidden() {
-    if (localStorage.getItem("orderEntries") == null || !navigator.onLine) {
+
+    if ((!Modernizr.applicationcache) || localStorage.getItem("orderEntries") == null || !navigator.onLine) {
         var pushButton = document.getElementById("push_button_sync");
         pushButton.className = "hidden";
     }

@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2016-05-21 v17
+# 2016-05-22 v2
 
 # Explicitly cached entries
 About.cshtml
@@ -16,7 +16,6 @@ css/main_max400.css
 css/main_max600.css
 css/main_max940.css
 css/main_min940.css
-css/main_styles.css
 css/StyleSheet3DButton.css
 
 images/dewalt.png
@@ -31,7 +30,7 @@ images/vattenpass.png
 
 scripts/localStorage.js
 scripts/main.js
-scripts/modernizr-custom.js
+scripts/modernizr-custom-dev.js
 scripts/order.js
 scripts/rotate.js
 
