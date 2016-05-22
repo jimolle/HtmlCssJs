@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2016-05-22 v2
+# 2016-05-22 v3
 
 # Explicitly cached entries
 About.cshtml
@@ -30,7 +30,7 @@ images/vattenpass.png
 
 scripts/localStorage.js
 scripts/main.js
-scripts/modernizr-custom-dev.js
+scripts/modernizr-custom-mini.js
 scripts/order.js
 scripts/rotate.js
 
